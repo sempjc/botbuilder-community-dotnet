@@ -300,6 +300,37 @@ namespace Bot.Builder.Community.Adapters.Google
         private DialogFlowResponseBody CreateDialogFlowResponseFromLastActivity(IEnumerable<Activity> activities, ITurnContext context)
         {
             var activity = activities != null && activities.Any() ? activities.Last() : null;
+            if (activity?.Attachments != null
+                && activity.Attachments.FirstOrDefault(a => a.ContentType == SigninCard.ContentType) != null)
+            {
+                var signInresponse = new DialogFlowResponseBody()
+                {
+                    Payload = new ResponsePayload()
+                    {
+                        Google = new PayloadContent()
+                        {
+                            RichResponse = new RichResponse()
+                            {
+                                Items = new Item[]
+                                                {
+                                    new SimpleResponse()
+                                    {
+                                        Content = new SimpleResponseContent()
+                                        {
+                                            TextToSpeech = "PLACEHOLDER"
+                                        }
+                                    }
+                                                }
+                            },
+                            ExpectUserResponse = true,
+                            SystemIntent = new SigninSystemIntent()
+                        }
+                    }
+                };
+
+                return signInresponse;
+            }
+
 
             var response = new DialogFlowResponseBody()
             {

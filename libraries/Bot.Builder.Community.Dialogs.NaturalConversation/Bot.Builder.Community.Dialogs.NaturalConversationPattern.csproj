@@ -6,16 +6,16 @@
 
   <ItemGroup>
     <Folder Include="Activities\" />
-    <Folder Include="Activities\AdaptiveDialogs"/>
-    <Folder Include="Activities\Dialogs"/>
+    <Folder Include="Activities\AdaptiveDialogs" />
+    <Folder Include="Activities\Dialogs" />
 
-    <Folder Include="Management.ConversationalLevel\"/>
-    <Folder Include="Management.ConversationalLevel\AdaptiveDialogs"/>
-    <Folder Include="Management.ConversationalLevel\Dialogs"/>
+    <Folder Include="Management.ConversationalLevel\" />
+    <Folder Include="Management.ConversationalLevel\AdaptiveDialogs" />
+    <Folder Include="Management.ConversationalLevel\Dialogs" />
 
-    <Folder Include="Management.SequenceLevel"/>
-    <Folder Include="Management.SequenceLevel\AdaptiveDialogs"/>
-    <Folder Include="Management.SequenceLevel\Dialogs"/>
+    <Folder Include="Management.SequenceLevel" />
+    <Folder Include="Management.SequenceLevel\AdaptiveDialogs" />
+    <Folder Include="Management.SequenceLevel\Dialogs" />
   </ItemGroup>
 
 </Project>
